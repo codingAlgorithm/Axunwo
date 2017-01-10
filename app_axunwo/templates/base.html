@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Search</title>
+    {% load staticfiles %}
+    <script src="{% static "csrf.js"%}"></script>
+
+     <!-- Bootstrap Core CSS -->
+    <link href="{% static "vendor/bootstrap/css/bootstrap.min.css" %}" rel="stylesheet">
+
+     <!-- Bootstrap Core CSS -->
+    <link href="{% static "vendor/bootstrap/css/bootstrap-select.min.css" %}" rel="stylesheet">
+
+    <!-- Theme CSS -->
+    <link href="{% static "css/base.css" %}" rel="stylesheet">
+
+    {% block customeStyle %} {% endblock %}
+
+</head>
+
+<body>
+  <nav class="navbar navbar-default navbar-fixed-top">
+      <div >
+        <div class="navbar-header">
+          <a class="navbar-brand" href="/">Axunwo</a>
+        </div>
+
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a class="navbar-brand" href="/post/">List your rental</a></li>
+            <li><a class="navbar-brand" href="/search/">Search</a></li>
+            <li><a class="navbar-brand" href="/contact/">Contact</a></li>
+            <li><a class="navbar-brand" href="/about/">About</a></li>
+            {% if user.is_authenticated%}
+            <li><a class="navbar-brand" href="/signup/">Sign up</a></li>
+            <li><a class="navbar-brand" href="/logout/">logout</a></li>
+            {% else %}
+            <li><a class="navbar-brand" href="/signup/">Sign up</a></li>
+            <li><a class="navbar-brand" href="/login/">Log in</a></li>
+            {% endif %}
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+    {% block mainBox %}{% endblock %}
+
+    <!-- jQuery -->
+    <script src="{% static "vendor/jquery/jquery.min.js" %}"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="{% static "vendor/bootstrap/js/bootstrap.min.js" %}"></script>
+
+</body>
+
+</html>

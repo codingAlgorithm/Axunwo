@@ -1,0 +1,90 @@
+<!doctype html>
+ <html lang="en">
+  <head>
+   <meta charset="utf-8">
+   <title>jQuery UI Slider - Range slider</title>
+   <link rel="stylesheet" href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
+   <script src="//code.jquery.com/jquery-1.9.1.js"></script>
+   <script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+   <!--<link rel="stylesheet" href="/resources/demos/style.css">-->
+   <script>
+    $(function() {
+     $( "#slider-range" ).slider({
+      range: true,
+      min: 0,
+      max: 500,
+      values: [ 75, 300 ],
+      slide: function( event, ui ) {
+       $( "#amount" ).val( "$" + ui.values[ 0 ] + " - $" + ui.values[ 1 ] );
+      }
+    });
+
+    $( "#amount" ).val( "$" + $( "#slider-range" ).slider( "values", 0 ) +
+     " - $" + $( "#slider-range" ).slider( "values", 1 ) );
+  });
+  </script>
+ </head>
+ <body>
+  <p>
+   <label for="amount">Price range:</label>
+   <input type="text" id="amount" style="border:0; color:#f6931f; font-weight:bold;">
+  </p>
+  <div id="slider-range"></div>
+ </body>
+</html>
+
+
+<div data-role="page">
+  <div data-role="header">
+    <h1>Range Slider</h1>
+  </div>
+
+  <div data-role="main" class="ui-content">
+    <form method="post" action="demoform.asp">
+      <div data-role="rangeslider">
+        <label for="price-min">Price:</label>
+        <input type="range" name="price-min" id="price-min" value="200" min="0" max="1000">
+        <label for="price-max">Price:</label>
+        <input type="range" name="price-max" id="price-max" value="800" min="0" max="1000">
+      </div>
+        <input type="submit" data-inline="true" value="Submit">
+        <p>The range slider can be useful for allowing users to select a specific price range when browsing products.</p>
+      </form>
+  </div>
+</div>
+
+<!--<div class="col-md-6">-->
+                      <!--<div class="aa-single-filter-search">-->
+                        <!--<span>AREA (SQ)</span>-->
+                        <!--<span>FROM</span>-->
+                        <!--<span id="skip-value-lower" class="example-val">30.00</span>-->
+                        <!--<span>TO</span>-->
+                        <!--<span id="skip-value-upper" class="example-val">100.00</span>-->
+                        <!--<div id="aa-sqrfeet-range" class="noUi-target noUi-ltr noUi-horizontal noUi-background">-->
+                        <!--</div>-->
+                      <!--</div>-->
+                    <!--</div>-->
+
+
+<div class="col-md-6">
+                      <div class="aa-single-filter-search">
+                        <span>PRICE ($)</span>
+                        <span>FROM</span>
+                        <span id="skip-value-lower2" class="example-val">30.00</span>
+                        <span>TO</span>
+                        <span id="skip-value-upper2" class="example-val">100.00</span>
+                        <div id="aa-price-range" class="noUi-target noUi-ltr noUi-horizontal noUi-background">
+                        </div>
+                      </div>
+
+
+    <style>
+    <script>
+        <input type="text" name="daterange" value="01/01/2015 - 01/31/2015" />
+
+        <script type="text/javascript">
+        $(function() {
+        $('input[name="daterange"]').daterangepicker();
+});
+    </script>
+    </style>

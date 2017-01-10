@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Search</title>
+    {% load staticfiles %}
+    <script src="{% static "csrf.js"%}"></script>
+
+     <!-- Bootstrap Core CSS -->
+    <link href="{% static "vendor/bootstrap/css/bootstrap.min.css" %}" rel="stylesheet">
+
+     <!-- Bootstrap Core CSS -->
+    <link href="{% static "vendor/bootstrap/css/bootstrap-select.min.css" %}" rel="stylesheet">
+
+    <!-- Theme CSS -->
+    <link href="{% static "css/base.css" %}" rel="stylesheet">
+
+    {% block customeStyle %} {% endblock %}
+
+</head>
+
+<body>
+  <nav class="navbar navbar-default navbar-fixed-top">
+      <div >
+        <div class="navbar-header">
+          <a class="navbar-brand" href="/">Axunwo</a>
+        </div>
+
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a class="navbar-brand" href="/post/">List your rental</a></li>
+            <li><a class="navbar-brand" href="/search/">Search</a></li>
+            <li><a class="navbar-brand" href="/contact/">Contact</a></li>
+            <li><a class="navbar-brand" href="/about/">About</a></li>
+            {% if user.is_authenticated%}
+            <li><a class="navbar-brand" href="/signup/">Sign up</a></li>
+            <li><a class="navbar-brand" href="/logout/">logout</a></li>
+            {% else %}
+            <li><a class="navbar-brand" href="/signup/">Sign up</a></li>
+            <li><a class="navbar-brand" href="/login/">Log in</a></li>
+            {% endif %}
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+    <div class = "container" id = "searchPage">
+
+
+
+        <!-- Search Bar -->
+        <div class = "row" id = "searchDiv">
+            <div class = "col-md-11" id = "searchArea">
+                <form action = '/search/' method = 'post'>
+                    <div class = "row" id = "searchPlace1">
+                        <div class = "col-md-2">
+                            <span>Size & Place</span>
+                        </div>
+
+                        <div class = "col-md-2">
+                            <select  class = "selectpicker" data-width="80%" title = "Location">
+                                <option>Manhaton Downtown</option>
+                                <option>Manhaton uptown</option>
+                                <option>Queens</option>
+                                <option>Brooklyn</option>
+                                <option>Brooklyn</option>
+                                <option>Roosevelt Island</option>
+                            </select>
+                        </div>
+
+                        <div class= "col-md-2 selectArea">
+                             <select  class = "selectpicker" data-width="80%" title="Bedroom">
+                                <option>1 bedroom</option>
+                                <option>2 bedroom</option>
+                                <option>3 bedroom</option>
+                                <option>3+ bedroom</option>
+                             </select>
+                        </div>
+
+                        <div class = "col-md-2">
+                             <select  class = "selectpicker" data-width="80%" title="Bathroom">
+                                <option>0 bathroom</option>
+                                <option>1 bathroom</option>
+                                <option>2 bathroom</option>
+                                <option>3+ bathroom</option>
+                            </select>
+                        </div>
+
+                        <div class = "col-md-1">
+                            <span>Date</span>
+                        </div>
+
+
+                        <div class = "col-md-3">
+                           <input type="text" id="amountFrom" placeholder = "YYYY-MM-DD">
+                           <span>to</span>
+                           <input type="text" id="amountTo" placeholder = "YYYY-MM-DD">
+                        </div>
+
+                    </div>
+
+                    <hr>
+
+                    <div class = "row" id = "searchPlace2">
+                        <div class= "col-md-2">
+                            <span>Details</span>
+                        </div>
+
+                        <div class= "col-md-2">
+                             <select  class = "selectpicker" multiple data-width="80%" title="Amenity">
+                                <option>Gym</option>
+                                <option>Pool</option>
+                                <option>Dog Allowed</option>
+                                <option>Pet Allowed</option>
+                            </select>
+                        </div>
+
+                        <!--<div class= "col-md-2 selectArea">-->
+                             <!--<select  class = "selectpicker" data-width="80% title="Bedroom">-->
+                                <!--<option>Apartment</option>-->
+                                <!--<option>House</option>-->
+                            <!--</select>-->
+                        <!--</div>-->
+
+                        <!--<div class= "col-md-2 selectArea">-->
+                            <!--<select  class = "selectpicker" data-width="80% title="Bedroom" >-->
+                                <!--<option>Entire house</option>-->
+                                <!--<option>Private room</option>-->
+                            <!--</select>-->
+                        <!--</div>-->
+
+                        <div class = "col-md-2">
+                            <select  class = "selectpicker" data-width="80%" title = "Entire House">
+                                <option>Entire house</option>
+                                <option>Private room</option>
+                            </select>
+                        </div>
+
+                        <div class = "col-md-2">
+                            <select  class = "selectpicker" data-width="80%" title = "Apartment">
+                                <option>Apartment</option>
+                                <option>House</option>
+                            </select>
+                        </div>
+                        <div class = "col-md-1">
+                            <span>Price $</span>
+                        </div>
+
+                        <div class = "col-md-3">
+                           <input type="text" id="amountFrom" placeholder = "0">
+                           <span>to</span>
+                           <input type="text" id="amountTo" placeholder = "0">
+                        </div>
+
+                    </div>
+
+                </form>
+
+            </div>
+
+             <div class = "col-md-1" id = "searchArea">
+                <button type="button" class="btn btn-default btn-lg" id = "searchSubmitButton">
+                  <span class="glyphicon glyphicon-search"></span>
+                </button>
+             </div>
+
+        </div>
+        <hr>
+
+
+
+        <!-- Result Bar -->
+        <div class = "row" id = "resultDiv">
+            <div id = "resultArea" class = "col-md-10 col-md-offset-1">
+                 {% for e in allpost %}
+                 <div class = "col-md-4" id = "resultThings">
+                        <div class="text-right" style = "color : #808080;font-family: Circular">
+
+                            <!--<p>{{e.photo_list.0}}</p>-->
+
+                            <img  class="list" src="/media/{{e.photo_list.0}}" style = "width:300px;height:200px" />
+
+                            <h6>$ {{e.post_price}} {{e.post_title}} </h6>
+                            <h6>{{e.post_bedroom}} beds in : {{e.post_available_time}}</h6>
+                        </div>
+                 </div>
+                 {% endfor %}
+             </div>
+         </div>
+    </div>
+
+
+    <!-- jQuery -->
+    <script src="{% static "vendor/jquery/jquery.min.js" %}"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="{% static "vendor/bootstrap/js/bootstrap.min.js" %}"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="{% static "vendor/bootstrap/js/bootstrap-select.min.js" %}"></script>
+
+
+</body>
+
+</html>
+
+
+

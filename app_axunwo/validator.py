@@ -1,0 +1,2 @@
+def validatePost():
+    return True

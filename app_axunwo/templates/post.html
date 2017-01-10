@@ -1,0 +1,210 @@
+{% extends "base.html" %}
+
+{% block extraStyles %}
+{% load static %}
+    <!-- Theme CSS -->
+
+{% endblock %}
+
+{% block mainBox %}
+<div class = "container col-md-8 col-md-offset-2" id = "postPage">
+        <form action="/post/" method="post" class = "form-basic" accept-charset="utf-8" enctype="multipart/form-data">{% csrf_token %}
+
+            <!-- Apartment details -->
+            <div>
+                    <div class="form-title-row">
+                        <h1>Apartment details</h1>
+                    </div>
+
+                    <div class="form-row">
+                        <label>
+                            <span>Price $</span>
+                            <input type="text" name="post_price">
+                        </label>
+                    </div>
+
+                     <div class="form-row">
+                        <label><span>Apartment Type</span></label>
+                        <div class="form-radio-buttons">
+                            <div>
+                                <label>
+                                    <input type="radio" name="post_type" value="a">
+                                    <span>Apartment</span>
+                                </label>
+                            </div>
+
+                            <div>
+                                <label>
+                                    <input type="radio" name="post_type" value="h">
+                                    <span>House</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <label><span>Rental Type</span></label>
+                        <div class="form-radio-buttons">
+                            <div>
+                                <label>
+                                    <input type="radio" name="rent_way" value="e">
+                                    <span>Entire house</span>
+                                </label>
+                            </div>
+
+                            <div>
+                                <label>
+                                    <input type="radio" name="rent_way" value="p">
+                                    <span>Private room</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <label>
+                            <span>Available date</span>
+                            <input type="text" name="post_time" placeholder = "YYYY-MM-DD">
+                        </label>
+                    </div>
+
+                    <div class="form-row">
+                        <label>
+                            <span>Title</span>
+                            <input type="text" name="post_title">
+                        </label>
+                    </div>
+
+                    <div class="form-row">
+                        <label>
+                            <span>Content</span>
+                            <textarea name="post_content"></textarea>
+                        </label>
+                    </div>
+
+                    <div class="form-row">
+                        <label>
+                            <span>Address</span>
+                            <input type="text" name="post_address">
+                        </label>
+                    </div>
+
+                    <div class="form-row">
+                        <label>
+                            <span>BedRoom</span>
+                            <select name = "post_bedroom">
+                                <option>0</option>
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3+</option>
+                            </select>
+                        </label>
+                    </div>
+
+                     <div class="form-row">
+                        <label>
+                            <span>BathRoom</span>
+                            <select name = "post_bathroom">
+                                <option>0</option>
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3+</option>
+                            </select>
+                        </label>
+                    </div>
+                <hr>
+            </div>
+
+
+            <!-- Photo Uploads -->
+            <div>
+                <div class="form-title-row">
+                     <h1>Upload Photos</h1>
+                </div>
+
+                <div class="form-row">
+                    <label>
+                        <span>Photo</span>
+                    </label>
+                    <input type="file" id="files" name="files" multiple />
+                    <output id="list"></output>
+                </div>
+            </div>
+
+
+            <!-- Amenity -->
+            <div>
+                 <div class="form-title-row">
+                     <h1>Amenity</h1>
+                </div>
+
+                <div class="form-row">
+                    <label>
+                        <span>Gym</span>
+                        <input type="checkbox" name="post_gym">
+                    </label>
+                </div>
+
+                <div class="form-row">
+                    <label>
+                        <span>Pool</span>
+                        <input type="checkbox" name="post_pool">
+                    </label>
+                </div>
+
+                <div class="form-row">
+                    <label>
+                        <span>Dog</span>
+                        <input type="checkbox" name="post_dog">
+                    </label>
+                </div>
+
+                <div class="form-row">
+                    <label>
+                        <span>Cat</span>
+                        <input type="checkbox" name="post_cat">
+                    </label>
+                </div>
+
+
+            </div>
+
+            <!-- Contact Information -->
+            <div>
+                <div class="form-title-row">
+                     <h1>Contact Information</h1>
+                </div>
+
+                    <div class="form-row">
+                        <label>
+                            <span>Wechat</span>
+                            <input type="text" name="post_wechat">
+                        </label>
+                    </div>
+
+
+                     <div class="form-row">
+                        <label>
+                            <span>Phone</span>
+                            <input type="text" name="post_phone">
+                        </label>
+                    </div>
+            </div>
+
+
+             <div class="form-row">
+                <button type="submit">Submit Rental</button>
+            </div>
+        </form>
+
+    </div>
+	<!-- jQuery -->
+    <script src="{% static "vendor/jquery/jquery.min.js" %}"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="{% static "vendor/bootstrap/js/bootstrap.min.js" %}"></script>
+
+    <!-- Theme JavaScript -->
+    <script src="{% static "js/post.js" %}"></script>
+
+{% endblock %}

@@ -1,0 +1,54 @@
+body {
+    padding-top: 30px;
+    font:  Sans-serif;
+    font-size: 200%
+    /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
+}
+
+
+#searchArea{
+    margin-top: 20px;
+    border-style:  solid ;
+
+
+}
+
+.selectArea{
+ display: inline-block;
+}
+
+#resultArea{
+    margin-top: 10px;
+    font: Sans-serif;
+
+}
+
+#searchPlace2{
+margin: 10px
+
+}
+#searchPlace{
+margin: 10px
+
+}
+
+#navArea{
+ margin-top: 15px;
+ background-color: #FFC0CB;
+ color: #0000FF
+ box-shadow: 10px 10px 5px #888888
+ font: Sans-serif;
+}
+
+.resultItem{
+    margin: 200px
+}
+
+#TimeDateArea{
+ padding-top: 20px;
+ margin-top: 15px;
+ border-style: solid;
+ font: Sans-serif;
+}
+
+

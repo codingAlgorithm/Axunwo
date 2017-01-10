@@ -15,22 +15,22 @@
 
 ### Home Page
 
-![]({{site.baseurl}}//Screen%20Shot%202017-01-10%20at%2013.57.02.png)
+![image](https://github.com/JanneyDong/Axunwo/websitephoto/Screen Shot 2017-01-10 at 13.57.02.png)
 
 ### Search Page
 
-![]({{site.baseurl}}//Screen%20Shot%202017-01-10%20at%2013.57.38.png)
+![image](https://github.com/JanneyDong/Axunwo/websitephoto/Screen Shot 2017-01-10 at 13.57.38.png)
 
 ### Post Page
 
-![]({{site.baseurl}}//Screen%20Shot%202017-01-10%20at%2013.58.08.png)
+![image](https://github.com/JanneyDong/Axunwo/websitephoto/Screen Shot 2017-01-10 at 13.58.08.png)
 
 ### Contact Page
 
-![]({{site.baseurl}}//Screen%20Shot%202017-01-10%20at%2013.58.27.png)
+![image](https://github.com/JanneyDong/Axunwo/websitephoto/Screen Shot 2017-01-10 at 13.58.27.png)
 
 ### Sign up & Log in Page
 
-![]({{site.baseurl}}//Screen%20Shot%202017-01-10%20at%2013.58.57.png)
+![image](https://github.com/JanneyDong/Axunwo/websitephoto/Screen Shot 2017-01-10 at 13.58.57.png)
 
 

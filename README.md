@@ -34,6 +34,5 @@
 
 
 ### Sign up & Log in Page
-<img width="1263" alt="screen shot 2017-01-10 at 13 58 57" src="https://cloud.githubusercontent.com/assets/23247418/21821702/894679d2-d742-11e6-8fb0-f29fc2be56d1.png">
-
+<img width="1273" alt="screen shot 2017-01-10 at 13 58 57" src="https://cloud.githubusercontent.com/assets/23247418/21821884/2ab6e2e8-d743-11e6-8bfc-b44661cf07f3.png">
 

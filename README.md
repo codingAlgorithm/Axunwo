@@ -2,6 +2,15 @@
 
 ### Axunwo, Find Love Home
 
+## Main tools:
+
+ Python 
+ Django
+  HTML
+  CSS
+Bootstrap
+Javascript
+ RESTful
 
 ### Main Process
 

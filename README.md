@@ -10,8 +10,8 @@
   CSS,
 Bootstrap,
 Javascript,
- RESTful
 
+ 
 ### Main Process
 
 - Design and implement the database schema and tables for apartment rent platform via Django ORM
